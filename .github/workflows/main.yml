@@ -1,0 +1,13 @@
+name: snake
+
+on: [push, pull_request]
+
+jobs:
+
+  snakes:
+    runs-on: rocky:9
+    steps:
+      - name: script
+        run: |
+          chmod 777 updates.sh
+          ./updates.sh
