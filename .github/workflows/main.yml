@@ -10,7 +10,7 @@ jobs:
       - name: script
         run: |
           chmod 777 updates.sh
-          ./updates.s
+          ./updates.sh
 
   python: # ¡CORREGIDA la indentación!
     runs-on: ubuntu-latest # CAMBIADO a un runner válido
@@ -20,3 +20,7 @@ jobs:
       with:
         python-version: '3.12' # '3.13' aún está en beta/pre-release. Usaremos '3.12'
     - run: python my_script.py
+
+
+
+  
