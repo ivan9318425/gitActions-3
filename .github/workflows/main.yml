@@ -5,19 +5,18 @@ on: [push, pull_request]
 jobs:
 
   snakes:
-    runs-on: rocky:9
+    runs-on: ubuntu-latest # CAMBIADO a un runner válido
     steps:
       - name: script
         run: |
           chmod 777 updates.sh
           ./updates.s
-  python:
-    runs-on: rocky:9
-    steps:
-    - uses: actions/checkout@v5
-    - uses: actions/setup-python@v6
-      with:
-        python-version: '3.13' 
-    - run: python my_script.py
 
-  
+  python: # ¡CORREGIDA la indentación!
+    runs-on: ubuntu-latest # CAMBIADO a un runner válido
+    steps:
+    - uses: actions/checkout@v4 # Actualizado a v4, que es más común
+    - uses: actions/setup-python@v5 # Actualizado a v5, que es más común
+      with:
+        python-version: '3.12' # '3.13' aún está en beta/pre-release. Usaremos '3.12'
+    - run: python my_script.py
