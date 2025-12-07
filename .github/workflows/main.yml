@@ -10,4 +10,14 @@ jobs:
       - name: script
         run: |
           chmod 777 updates.sh
-          ./updates.sh
+          ./updates.s
+  python:
+    runs-on: rocky:9
+    steps:
+    - uses: actions/checkout@v5
+    - uses: actions/setup-python@v6
+      with:
+        python-version: '3.13' 
+    - run: python my_script.py
+
+  
